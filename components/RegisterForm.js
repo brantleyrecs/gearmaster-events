@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { registerUser } from '../utils/auth'; // Update with path to registerUser
 
 function RegisterForm({ user, updateUser }) {
   const [formData, setFormData] = useState({
-    bio: '',
+    name: '',
     uid: user.uid,
   });
 
@@ -16,16 +15,25 @@ function RegisterForm({ user, updateUser }) {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Gamer Bio</Form.Label>
-        <Form.Control as="textarea" name="bio" required placeholder="Enter your Bio" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
-        <Form.Text className="text-muted">Let other gamers know a little bit about you...</Form.Text>
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
-    </Form>
+    <>
+      {/* <div className="form__group field" onSubmit={handleSubmit}>
+        <input type="input" name="name" className="form__field" placeholder="Name" required onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
+        <label htmlFor="name" className="form__label">Name</label>
+        <button type="submit" className="btn">Button</button>
+      </div> */}
+      <Form onSubmit={handleSubmit}>
+        <input type="input" name="name" className="form__field" placeholder="Name" required onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
+        <label htmlFor="name" className="form__label" style={{ marginTop: '50px' }}>Name</label>
+        <button type="submit" className="btn">Button</button>
+        {/* <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Name</Form.Label>
+          <Form.Control as="text" name="bio" required placeholder="Enter your Name" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Submit
+        </Button> */}
+      </Form>
+    </>
   );
 }
 
