@@ -125,3 +125,13 @@ button:hover:after {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
+
+/* event card css */
+.eventCard {
+  width: 190px;
+  height: 254px;
+  border-radius: 50px;
+  background: #d9d9d9c4;
+  box-shadow: 10px 10px 30px #bebebee7,
+    -10px -10px 30px #ffffffdc;
+}
