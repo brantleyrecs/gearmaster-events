@@ -21,6 +21,11 @@ body {
   background-color: rgb(183, 183, 183);
 }
 
+/* .signOut {
+  position: relative;
+  left: 300%
+} */
+
 /* sign in form css */
 .form__group {
   position: relative;
@@ -101,8 +106,6 @@ body {
   position: relative;
   z-index: 1;
   overflow: hidden;
-  box-shadow: 5px 5px 15px #282828e7,
-      -5px -5px 15px #8d8d8ddc;
 }
 
 button:hover {
@@ -143,12 +146,22 @@ table {
   width: 100%;
 }
 
+.table {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
 th {
   background-color: #8b8b8b;
+  width: 150px;
+  text-align: center;
 }
 
 td {
   background-color: rgb(218, 218, 218);
+  width: 155px;
+  text-align: center;
 }
 
 table,

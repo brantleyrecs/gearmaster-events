@@ -12,16 +12,20 @@ export default function GearCard({ obj }) {
   return (
     <>
       <table>
-        <tr>
-          <th>Gear Name</th>
-          <th>Gear Info</th>
-          <th>Remove</th>
-        </tr>
-        <tr>
-          <td>{obj.name}</td>
-          <td>{obj.info}</td>
-          <td><button type="button" className="btn" onClick={removeThisItem}>Remove</button></td>
-        </tr>
+        {/* <thead>
+          <tr>
+            <th>Gear Name</th>
+            <th>Gear Info</th>
+            <th>Remove</th>
+          </tr>
+        </thead> */}
+        <tbody>
+          <tr>
+            <td>{obj.name}</td>
+            <td>{obj.info}</td>
+            <td><button type="button" className="btn" onClick={removeThisItem}>Remove</button></td>
+          </tr>
+        </tbody>
       </table>
     </>
   );

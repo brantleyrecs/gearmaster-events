@@ -58,7 +58,7 @@ function GearInventory({ eventId }) {
     e.preventDefault();
     const payload = formInput;
     addGear(eventId, payload).then(() => {
-      // window.location.reload();
+      window.location.reload();
     });
   };
 

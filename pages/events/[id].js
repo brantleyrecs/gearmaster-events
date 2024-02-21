@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
-// import Link from 'next/link';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { getSingleEvent, deleteEvent } from '../../utils/data/eventData';
 import GearCard from '../../components/cards/GearCard';
@@ -39,12 +39,24 @@ export default function ViewEvents() {
       <h6>{eventDetails.date}</h6>
       <h6>{eventDetails.time}</h6>
       <h6>{eventDetails.type?.name}</h6>
+      <Link href={`/events/edit/${eventDetails.id}`} passHref>
+        <button className="btn" type="button">Edit</button>
+      </Link>
       <button className="btn" onClick={deleteThisEvent} type="button">Delete</button>
 
       <GearInventory eventId={eventDetails.id} show={modalShow} onHide={() => setModalShow(false)} />
 
+      <table>
+        <thead>
+          <tr>
+            <th>Gear Name</th>
+            <th>Gear Info</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+      </table>
       <div style={{
-        display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', margin: '20px',
+        display: 'flex', flexDirection: 'column', flexWrap: 'wrap', justifyContent: 'center',
       }}
       >
         {gear?.map((item) => (
