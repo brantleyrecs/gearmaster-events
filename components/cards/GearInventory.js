@@ -11,7 +11,7 @@ const initialState = {
 };
 
 // eslint-disable-next-line react/prop-types
-function GearInventory({ eventId }) {
+function GearInventory({ eventId, onUpdate }) {
   const [formInput, setFormInput] = useState(initialState);
   const [modalShow, setModalShow] = React.useState(false);
   const [gearList, setGearList] = useState([]);
@@ -57,9 +57,7 @@ function GearInventory({ eventId }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const payload = formInput;
-    addGear(eventId, payload).then(() => {
-      window.location.reload();
-    });
+    addGear(eventId, payload).then(onUpdate);
   };
 
   return (

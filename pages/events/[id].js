@@ -44,6 +44,11 @@ export default function ViewEvents() {
     }
   };
 
+  const loadEvent = () => {
+    // TODO: create promises and then make a GET request for gardens
+    getSingleEvent(id).then(setEventDetails);
+  };
+
   useEffect(() => {
     getSingleEvent(id).then(setEventDetails);
   }, [id]);
@@ -63,7 +68,7 @@ export default function ViewEvents() {
       </Link>
       <button className="btn" onClick={deleteThisEvent} type="button">Delete</button>
 
-      <GearInventory eventId={eventDetails.id} show={modalShow} onHide={() => setModalShow(false)} />
+      <GearInventory eventId={eventDetails.id} onUpdate={loadEvent} show={modalShow} onHide={() => setModalShow(false)} />
 
       <table>
         <thead>
@@ -83,6 +88,7 @@ export default function ViewEvents() {
             <GearCard
               obj={item}
               eventDetails={eventDetails}
+              onUpdate={loadEvent}
             />
           </div>
         ))}
