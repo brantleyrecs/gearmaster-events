@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useAuth } from '../../utils/context/authContext';
 import { getSingleEvent, deleteEvent } from '../../utils/data/eventData';
 import GearCard from '../../components/cards/GearCard';
 import GearInventory from '../../components/cards/GearInventory';
 
 export default function ViewEvents() {
+  const { user } = useAuth();
   const [eventDetails, setEventDetails] = useState({});
   const [modalShow, setModalShow] = React.useState(false);
   const [gear, setGear] = useState([]);
@@ -45,9 +47,22 @@ export default function ViewEvents() {
   };
 
   const loadEvent = () => {
-    // TODO: create promises and then make a GET request for gardens
     getSingleEvent(id).then(setEventDetails);
   };
+
+  // eslint-disable-next-line consistent-return
+  function Buttons() {
+    if (eventDetails.user?.id === user.id) {
+      return (
+        <>
+          <Link href={`/events/edit/${eventDetails.id}`} passHref>
+            <button className="btn" type="button">Edit</button>
+          </Link>
+          <button className="btn" onClick={deleteThisEvent} type="button">Delete</button>
+        </>
+      );
+    } return <div />;
+  }
 
   useEffect(() => {
     getSingleEvent(id).then(setEventDetails);
@@ -63,10 +78,8 @@ export default function ViewEvents() {
       <h6>{formatDate(eventDetails.date)}</h6>
       <h6>{eventDetails.time ? convertTo12HourFormat(eventDetails.time) : ''}</h6>
       <h6>{eventDetails.type?.name}</h6>
-      <Link href={`/events/edit/${eventDetails.id}`} passHref>
-        <button className="btn" type="button">Edit</button>
-      </Link>
-      <button className="btn" onClick={deleteThisEvent} type="button">Delete</button>
+
+      <Buttons />
 
       <GearInventory eventId={eventDetails.id} onUpdate={loadEvent} show={modalShow} onHide={() => setModalShow(false)} />
 
