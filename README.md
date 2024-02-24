@@ -1,4 +1,22 @@
-# React/Next.js Django Auth Template
+# GearMaster Events
+___
+## Overview
+### This is an app to help a production company set up an event with what is needed for that event.
+
+[Wireframe](https://www.figma.com/file/E2emcWBy1POAPTlaUErdum/Untitled?type=design&node-id=0-1&mode=design&t=iYVHefe2fby53AXd-0)
+[Project Board](https://github.com/users/brantleyrecs/projects/3)
+
+## The User
+### The user is a production company that needs to plan, prep, and setup an event and needs a better way to keep up with equipment.
+
+## Features
+### There is full CRUD on an event so you can Create, Read, Update, and Delete an event. You can create and read gear. Gear can be on many events and events can have many gear. You can also add a type to the event so you know what kind of event it is. 
+
+## Screen Shot
+![Screen Shot of App](https://github.com/brantleyrecs/gearmaster-events/assets/72366361/5d2f12c8-9296-4dcb-b334-5db919beb0ba)
+
+## Contributor
+### [Michael Brantley](https://github.com/brantleyrecs)
 
 ## Topics
 - [Get Started](#getting-started)
