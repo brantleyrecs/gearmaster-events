@@ -18,5 +18,154 @@ a {
 }
 
 body {
-  background-color: #88effd;
+  background-color: rgb(183, 183, 183);
+}
+
+/* .signOut {
+  position: relative;
+  left: 300%
+} */
+
+/* sign in form css */
+.form__group {
+  position: relative;
+  padding: 20px 0 0;
+  width: 100%;
+  max-width: 180px;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 17px;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown~.form__label {
+  font-size: 17px;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #9b9b9b;
+  pointer-events: none;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #000000, #b3b3b3);
+  border-image-slice: 1;
+}
+
+.form__field:focus~.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #000000;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required,
+.form__field:invalid {
+  box-shadow: none;
+}
+
+/* Submit button */
+.btn {
+  width: 6.5em;
+  height: 2.3em;
+  margin: 0.5em;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 0.625em;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+button:hover {
+  color: black;
+}
+
+button:after {
+  content: "";
+  background: white;
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
+}
+
+button:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+/* event card css */
+.eventCard {
+  width: 190px;
+  height: 254px;
+  border-radius: 50px;
+  background: #d9d9d9c4;
+  box-shadow: 10px 10px 30px #bebebee7,
+    -10px -10px 30px #ffffffdc;
+}
+
+/* table  */
+table {
+  width: 100%;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+th {
+  background-color: #8b8b8b;
+  width: 150px;
+  text-align: center;
+}
+
+td {
+  background-color: rgb(218, 218, 218);
+  width: 155px;
+  text-align: center;
+}
+
+table,
+th,
+td {
+  border: 1px solid;
 }
