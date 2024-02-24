@@ -16,22 +16,10 @@ function RegisterForm({ user, updateUser }) {
 
   return (
     <>
-      {/* <div className="form__group field" onSubmit={handleSubmit}>
-        <input type="input" name="name" className="form__field" placeholder="Name" required onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
-        <label htmlFor="name" className="form__label">Name</label>
-        <button type="submit" className="btn">Button</button>
-      </div> */}
       <Form onSubmit={handleSubmit}>
         <input type="input" name="name" className="form__field" placeholder="Name" required onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
         <label htmlFor="name" className="form__label" style={{ marginTop: '50px' }}>Name</label>
         <button type="submit" className="btn">Button</button>
-        {/* <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Name</Form.Label>
-          <Form.Control as="text" name="bio" required placeholder="Enter your Name" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
-        </Button> */}
       </Form>
     </>
   );

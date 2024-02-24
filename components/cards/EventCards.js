@@ -8,19 +8,15 @@ export default function EventCards({ obj }) {
     const month = dateObject.getMonth() + 1;
     const day = dateObject.getDate();
     const year = dateObject.getFullYear();
+
     return `${month}-${day}-${year}`;
   }
 
   function convertTo12HourFormat(time24) {
-    // Parse the time string to get hours and minutes
     const [hours, minutes] = time24.split(':').map(Number);
-    // Determine AM or PM
     const period = hours < 12 ? 'AM' : 'PM';
-    // Convert hours to 12-hour format
     const hours12 = hours % 12 || 12;
-    // Format minutes with leading zero if necessary
     const minutesFormatted = minutes < 10 ? `0${minutes}` : minutes;
-    // Construct the 12-hour formatted time string
     const time12 = `${hours12}:${minutesFormatted} ${period}`;
 
     return time12;

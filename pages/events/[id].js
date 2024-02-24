@@ -13,6 +13,25 @@ export default function ViewEvents() {
   const router = useRouter();
   const { id } = router.query ?? {};
 
+  function formatDate(rawDate) {
+    const dateObject = new Date(rawDate);
+    const month = dateObject.getMonth() + 1;
+    const day = dateObject.getDate();
+    const year = dateObject.getFullYear();
+
+    return `${month}-${day}-${year}`;
+  }
+
+  function convertTo12HourFormat(time24) {
+    const [hours, minutes] = time24.split(':').map(Number);
+    const period = hours < 12 ? 'AM' : 'PM';
+    const hours12 = hours % 12 || 12;
+    const minutesFormatted = minutes < 10 ? `0${minutes}` : minutes;
+    const time12 = `${hours12}:${minutesFormatted} ${period}`;
+
+    return time12;
+  }
+
   setTimeout(() => {
     setGear(eventDetails.gear);
   }, 1);
@@ -36,8 +55,8 @@ export default function ViewEvents() {
       </Head>
       <h1>{eventDetails.name}</h1>
       <h5>{eventDetails.location}</h5>
-      <h6>{eventDetails.date}</h6>
-      <h6>{eventDetails.time}</h6>
+      <h6>{formatDate(eventDetails.date)}</h6>
+      <h6>{eventDetails.time ? convertTo12HourFormat(eventDetails.time) : ''}</h6>
       <h6>{eventDetails.type?.name}</h6>
       <Link href={`/events/edit/${eventDetails.id}`} passHref>
         <button className="btn" type="button">Edit</button>

@@ -25,6 +25,7 @@ export default function ViewEvents() {
           <tr>
             <th>Gear Name</th>
             <th>Gear Info</th>
+            <th>Edit Gear</th>
           </tr>
         </thead>
       </table>

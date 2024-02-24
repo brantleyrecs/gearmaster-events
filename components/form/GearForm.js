@@ -42,11 +42,11 @@ const GearForm = ({ gearObj }) => {
         info: currentGear.info,
       };
       updateGear(currentGear.id, payload)
-        .then(() => router.push('/'));
+        .then(() => router.push('/gear'));
     } else {
       const payload = { ...currentGear };
       createGear(payload)
-        .then(() => router.push('/'));
+        .then(() => router.push('/gear'));
     }
   };
 
@@ -62,7 +62,7 @@ const GearForm = ({ gearObj }) => {
             <input type="text" name="name" className="input" placeholder="Gear Name" required value={currentGear.name} onChange={handleChange} />
 
             {/* Info */}
-            <textarea type="text" name="info" className="input" placeholder="Gear Info" required value={currentGear.location} onChange={handleChange} />
+            <textarea type="text" name="info" className="input" placeholder="Gear Info" required value={currentGear.info} onChange={handleChange} />
 
             <button type="submit" className="btn" style={{ marginTop: '20px' }}>{gearObj.id ? 'Update' : 'Create'}</button>
           </Form>
