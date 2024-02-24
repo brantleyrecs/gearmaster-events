@@ -74,7 +74,7 @@ function GearInventory({ eventId }) {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Order Menu
+            Gear Inventory
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
