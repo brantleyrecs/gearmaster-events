@@ -6,7 +6,6 @@ const NewGear = () => (
     <Head>
       <title>New Gear</title>
     </Head>
-    <h2>Create New Gear</h2>
     <GearForm />
   </div>
 );

@@ -9,7 +9,6 @@ const NewOrder = () => {
       <Head>
         <title>New Event</title>
       </Head>
-      <h2>Create New Event</h2>
       <EventForm user={user} />
     </div>
   );

@@ -70,45 +70,47 @@ const EventForm = ({ eventObj }) => {
 
   return (
     <>
-      <div className="formTitle">{eventObj.id ? 'Update' : 'Create'} Event</div>
-      <div className="formCard" style={{ marginTop: '25px' }}>
-        <div className="bg">
+      <div className="cards">
 
-          <Form onSubmit={handleSubmit}>
+        <h2 className="formTitle">{eventObj.id ? 'Update' : 'Create'} Event</h2>
+        <div className="formCard" style={{ marginTop: '25px' }}>
+          <div className="bg">
 
-            {/* Event Name */}
-            <input type="text" name="name" className="input" placeholder="Event Name" required value={currentEvent.name} onChange={handleChange} />
+            <Form onSubmit={handleSubmit}>
 
-            {/* Location */}
-            <input type="text" name="location" className="input" placeholder="Event Location" required value={currentEvent.location} onChange={handleChange} />
+              {/* Event Name */}
+              <input type="text" name="name" className="input" placeholder="Event Name" required value={currentEvent.name} onChange={handleChange} />
 
-            {/* Date */}
-            <input type="date" name="date" className="input" placeholder="Event Date" required value={currentEvent.date} onChange={handleChange} />
+              {/* Location */}
+              <input type="text" name="location" className="input" placeholder="Event Location" required value={currentEvent.location} onChange={handleChange} />
 
-            {/* Time */}
-            <input type="time" name="time" className="input" placeholder="Event Time" required value={currentEvent.time} onChange={handleChange} />
+              {/* Date */}
+              <input type="date" name="date" className="input" placeholder="Event Date" required value={currentEvent.date} onChange={handleChange} />
 
-            {/* Type */}
-            <select className="input" type="text" name="typeId" placeholder="Event Type" value={currentEvent.typeId} onChange={handleChange}>
-              <option value="" placeholder="Event Type">Select Type</option>
-              <hr />
-              {
-                dbType.map((objType) => (
-                  <>
-                    <option
-                      key={objType.id}
-                      value={Number(objType.id)}
-                    >
-                      {objType.name}
-                    </option>
-                  </>
-                ))
-              }
-            </select>
-            <button type="submit" className="btn" style={{ marginTop: '20px' }}>{eventObj.id ? 'Update' : 'Create'}</button>
-          </Form>
+              {/* Time */}
+              <input type="time" name="time" className="input" placeholder="Event Time" required value={currentEvent.time} onChange={handleChange} />
+
+              {/* Type */}
+              <select className="input" type="text" name="typeId" placeholder="Event Type" value={currentEvent.typeId} onChange={handleChange}>
+                <option value="" placeholder="Event Type">Select Type</option>
+                <hr />
+                {
+                    dbType.map((objType) => (
+                      <>
+                        <option
+                          key={objType.id}
+                          value={Number(objType.id)}
+                        >
+                          {objType.name}
+                        </option>
+                      </>
+                    ))
+                  }
+              </select>
+              <button type="submit" className="btn" style={{ marginTop: '20px' }}>{eventObj.id ? 'Update' : 'Create'}</button>
+            </Form>
+          </div>
         </div>
-        <div className="blob" />
       </div>
     </>
   );
