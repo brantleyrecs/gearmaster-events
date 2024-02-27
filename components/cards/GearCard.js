@@ -2,11 +2,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { removeGear } from '../../utils/data/eventData';
 
-export default function GearCard({ obj }) {
+export default function GearCard({ obj, onUpdate }) {
   const removeThisItem = () => {
-    removeGear(obj.id).then(() => {
-      window.location.reload();
-    });
+    removeGear(obj.id).then(onUpdate);
   };
 
   return (
@@ -30,4 +28,5 @@ GearCard.propTypes = {
     name: PropTypes.string,
     info: PropTypes.string,
   }).isRequired,
+  onUpdate: PropTypes.func.isRequired,
 };
