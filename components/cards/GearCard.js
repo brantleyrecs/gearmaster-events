@@ -9,12 +9,12 @@ export default function GearCard({ obj, onUpdate }) {
 
   return (
     <>
-      <table>
+      <table className="table">
         <tbody>
           <tr>
-            <td>{obj.name}</td>
-            <td>{obj.info}</td>
-            <td><button type="button" className="btn" onClick={removeThisItem}>Remove</button></td>
+            <td className="td">{obj.name}</td>
+            <td className="td">{obj.info}</td>
+            <td className="td"><button type="button" className="btn" onClick={removeThisItem}>Remove</button></td>
           </tr>
         </tbody>
       </table>

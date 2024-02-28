@@ -83,12 +83,12 @@ export default function ViewEvents() {
 
       <GearInventory eventId={eventDetails.id} onUpdate={loadEvent} show={modalShow} onHide={() => setModalShow(false)} />
 
-      <table>
+      <table className="table">
         <thead>
-          <tr>
-            <th>Gear Name</th>
-            <th>Gear Info</th>
-            <th>Remove</th>
+          <tr className="tr">
+            <th className="th">Gear Name</th>
+            <th className="th">Gear Info</th>
+            <th className="th">Remove</th>
           </tr>
         </thead>
       </table>
