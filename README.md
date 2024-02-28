@@ -15,6 +15,8 @@ ___
 ## Screen Shot
 ![Screen Shot of App](https://github.com/brantleyrecs/gearmaster-events/assets/72366361/5d2f12c8-9296-4dcb-b334-5db919beb0ba)
 
+[Loom Video](https://www.loom.com/share/d03ee61134be46caacd4980c863a709c?sid=64626221-45ef-4ebb-986b-57c1ec95e6ae)
+
 ## Contributor
 ### [Michael Brantley](https://github.com/brantleyrecs)
 

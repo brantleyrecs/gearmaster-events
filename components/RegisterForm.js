@@ -23,7 +23,7 @@ function RegisterForm({ user, updateUser }) {
       <Form onSubmit={handleSubmit}>
         <input type="input" name="name" className="form__field" placeholder="Name" required onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
         <label htmlFor="name" className="form__label" style={{ marginTop: '50px' }}>Name</label>
-        <button type="submit" className="btn">Button</button>
+        <button type="submit" className="btn">Submit</button>
       </Form>
     </>
   );

@@ -16,12 +16,9 @@ export default function ViewEvents() {
   const { id } = router.query ?? {};
 
   function formatDate(rawDate) {
-    const dateObject = new Date(rawDate);
-    const month = dateObject.getMonth() + 1;
-    const day = dateObject.getDate();
-    const year = dateObject.getFullYear();
+    const [year, month, day] = rawDate.split('-');
 
-    return `${month}-${day}-${year}`;
+    return `${month}/${day}/${year}`;
   }
 
   function convertTo12HourFormat(time24) {
@@ -75,7 +72,7 @@ export default function ViewEvents() {
       </Head>
       <h1>{eventDetails.name}</h1>
       <h5>{eventDetails.location}</h5>
-      <h6>{formatDate(eventDetails.date)}</h6>
+      <h6>{eventDetails.date ? formatDate(eventDetails.date) : ''}</h6>
       <h6>{eventDetails.time ? convertTo12HourFormat(eventDetails.time) : ''}</h6>
       <h6>{eventDetails.type?.name}</h6>
 
