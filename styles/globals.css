@@ -206,3 +206,9 @@ Form {
   box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
   color: #fff;
 }
+
+.fc {
+  width: 1000px;
+  height: 500px;
+  margin: 0 auto;
+}
