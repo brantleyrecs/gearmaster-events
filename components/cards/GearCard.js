@@ -11,7 +11,7 @@ export default function GearCard({ obj, onUpdate }) {
     <>
       <table className="table">
         <tbody>
-          <tr>
+          <tr className="tr">
             <td className="td">{obj.name}</td>
             <td className="td">{obj.info}</td>
             <td className="td"><button type="button" className="btn" onClick={removeThisItem}>Remove</button></td>

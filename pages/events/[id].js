@@ -89,9 +89,11 @@ export default function ViewEvents() {
           </tr>
         </thead>
       </table>
-      <div style={{
-        display: 'flex', flexDirection: 'column', flexWrap: 'wrap', justifyContent: 'center',
-      }}
+      <div
+        style={{
+          display: 'flex', flexDirection: 'column', flexWrap: 'wrap', justifyContent: 'center',
+        }}
+        className="tableBorder"
       >
         {gear?.map((item) => (
           <div key={`item--${item.id}`} className="item">

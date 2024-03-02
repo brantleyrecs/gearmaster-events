@@ -92,6 +92,7 @@ body {
 }
 
 /* Submit button */
+
 .btn {
   width: 6.5em;
   height: 2.3em;
@@ -108,11 +109,11 @@ body {
   overflow: hidden;
 }
 
-button:hover {
+button.btn:hover {
   color: black;
 }
 
-button:after {
+button.btn:after {
   content: "";
   background: white;
   position: absolute;
@@ -125,7 +126,7 @@ button:after {
   transition: all 0.5s;
 }
 
-button:hover:after {
+button.btn:hover:after {
   transform: skewX(-45deg) scale(1, 1);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -141,18 +142,23 @@ button:hover:after {
     -10px -10px 30px #ffffffdc;
 }
 
-table {
-  background-color: #fff;
+th, th.th {
+  background-color: #919191;
+}
+
+td {
+  background-color: #ffffff;
 }
 
 /* table  */
+
 .table {
   width: 100%;
   margin-bottom: 0;
 }
 
 .tr {
-  background-color: #9a9a9a;
+  background-color: #ffffff;
 }
 
 .th {
@@ -162,7 +168,7 @@ table {
 }
 
 .td {
-  background-color: rgb(215, 215, 215);
+  background-color: rgb(255, 255, 255);
   width: 170px;
   text-align: center;
 }

@@ -1,5 +1,7 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable import/no-extraneous-dependencies */
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -8,6 +10,7 @@ import { getEvents } from '../utils/data/eventData';
 
 function Calendar() {
   const [events, setEvents] = useState([]);
+  const router = useRouter();
 
   function combineDateTime(date, time) {
   // Split date and time strings
@@ -32,7 +35,10 @@ function Calendar() {
     });
   }, []);
 
-  console.warn(events);
+  const handleClick = (e) => {
+    const eventId = Number(e.event._def?.publicId);
+    router.push(`/events/${eventId}`);
+  };
 
   // Define event handlers as needed
 
@@ -40,14 +46,8 @@ function Calendar() {
     <FullCalendar
       plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
       initialView="dayGridMonth"
-      events={[
-        {
-          id: 1,
-          title: 'Test Event',
-          start: '2024-02-01T10:00:00',
-          end: '2024-02-01T12:00:00',
-        },
-      ]}
+      events={events}
+      eventClick={handleClick}
       // Add other props and event handlers as needed
     />
   );
