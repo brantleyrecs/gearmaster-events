@@ -60,11 +60,11 @@ const EventForm = ({ eventObj }) => {
         userId: user.id,
       };
       updateEvent(currentEvent.id, payload)
-        .then(() => router.push('/events'));
+        .then(() => router.push(`/events/${currentEvent.id}`));
     } else {
       const payload = { ...currentEvent, userId: user.id };
       createEvent(payload)
-        .then(() => router.push('/events'));
+        .then((createdEvent) => router.push(`/events/${createdEvent.id}`));
     }
   };
 

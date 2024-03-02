@@ -92,6 +92,10 @@ body {
 }
 
 /* Submit button */
+Button.signOut {
+  font-size: 13px;
+  height: 2.3em;
+}
 
 .btn {
   width: 6.5em;
@@ -207,4 +211,12 @@ Form {
   width: 1000px;
   height: 500px;
   margin: 0 auto;
+}
+
+.fc-event:hover {
+  cursor: pointer;
+}
+
+.fc-daygrid-day-frame:hover {
+  background-color: #d4d4d4;
 }
