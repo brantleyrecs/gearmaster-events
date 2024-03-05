@@ -217,6 +217,6 @@ Form {
   cursor: pointer;
 }
 
-.fc-daygrid-day-frame:hover {
-  background-color: #d4d4d4;
+.fc .fc-daygrid-day.fc-day-today {
+  background-color: #0015ff46;
 }
