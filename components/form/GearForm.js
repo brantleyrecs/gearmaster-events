@@ -52,7 +52,7 @@ const GearForm = ({ gearObj }) => {
 
   return (
     <>
-      <h2 className="formTitle">{gearObj.id ? 'Update' : 'Create'}</h2>
+      <h2 className="formTitle" style={{ fontFamily: 'cursive', fontSize: '75px' }}>{gearObj.id ? 'Update' : 'Create'} Gear</h2>
       <div className="formCard" style={{ marginTop: '25px' }}>
         <div className="bg">
 

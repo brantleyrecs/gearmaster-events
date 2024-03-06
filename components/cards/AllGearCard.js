@@ -5,12 +5,12 @@ import React from 'react';
 export default function AllGearCard({ obj }) {
   return (
     <>
-      <table>
+      <table className="table">
         <tbody>
-          <tr>
-            <td>{obj.name}</td>
-            <td>{obj.info}</td>
-            <td>
+          <tr className="tr">
+            <td className="td">{obj.name}</td>
+            <td className="td">{obj.info}</td>
+            <td className="td">
               <Link href={`/gear/edit/${obj.id}`} passHref>
                 <button type="button" className="btn">Edit</button>
               </Link>
