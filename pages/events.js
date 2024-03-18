@@ -19,6 +19,7 @@ export default function Events() {
       <Head>
         <title>Events</title>
       </Head>
+      <h1 style={{ textAlign: 'center', fontFamily: 'cursive', fontSize: '75px' }}>Events</h1>
       <div style={{
         display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center',
       }}

@@ -19,6 +19,7 @@ const initialState = {
 const EventForm = ({ eventObj }) => {
   const { user } = useAuth();
   const router = useRouter();
+  const { date } = router.query;
   const [currentEvent, setCurrentEvent] = useState(initialState);
   const [dbType, setDbType] = useState([]);
 
@@ -47,6 +48,8 @@ const EventForm = ({ eventObj }) => {
     }));
   };
 
+  console.warn(date);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (eventObj.id) {
@@ -60,11 +63,15 @@ const EventForm = ({ eventObj }) => {
         userId: user.id,
       };
       updateEvent(currentEvent.id, payload)
-        .then(() => router.push('/events'));
+        .then(() => router.push(`/events/${currentEvent.id}`));
+    } else if (!eventObj.id && date) {
+      const payload = { ...currentEvent, userId: user.id, date };
+      createEvent(payload)
+        .then((createdEvent) => router.push(`/events/${createdEvent.id}`));
     } else {
       const payload = { ...currentEvent, userId: user.id };
       createEvent(payload)
-        .then(() => router.push('/events'));
+        .then((createdEvent) => router.push(`/events/${createdEvent.id}`));
     }
   };
 
@@ -72,7 +79,7 @@ const EventForm = ({ eventObj }) => {
     <>
       <div className="cards">
 
-        <h2 className="formTitle">{eventObj.id ? 'Update' : 'Create'} Event</h2>
+        <h2 className="formTitle" style={{ fontFamily: 'cursive', fontSize: '75px' }}>{eventObj.id ? 'Update' : 'Create'} Event</h2>
         <div className="formCard" style={{ marginTop: '25px' }}>
           <div className="bg">
 
@@ -85,7 +92,7 @@ const EventForm = ({ eventObj }) => {
               <input type="text" name="location" className="input" placeholder="Event Location" required value={currentEvent.location} onChange={handleChange} />
 
               {/* Date */}
-              <input type="date" name="date" className="input" placeholder="Event Date" required value={currentEvent.date} onChange={handleChange} />
+              <input type="date" name="date" className="input" placeholder="Event Date" required value={currentEvent.date ? currentEvent.date : date} onChange={handleChange} />
 
               {/* Time */}
               <input type="time" name="time" className="input" placeholder="Event Time" required value={currentEvent.time} onChange={handleChange} />

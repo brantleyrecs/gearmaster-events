@@ -17,15 +17,16 @@ export default function ViewEvents() {
       <Head>
         <title>Gear</title>
       </Head>
+      <h1 style={{ textAlign: 'center', fontFamily: 'cursive', fontSize: '75px' }}>Gear</h1>
       <Link passHref href="./gear/new">
         <button type="button" className="btn">New Gear</button>
       </Link>
-      <table style={{ marginTop: '20px' }}>
+      <table style={{ marginTop: '20px' }} className="table">
         <thead>
-          <tr>
-            <th>Gear Name</th>
-            <th>Gear Info</th>
-            <th>Edit Gear</th>
+          <tr className="tr">
+            <th className="th">Gear Name</th>
+            <th className="th">Gear Info</th>
+            <th className="th">Edit Gear</th>
           </tr>
         </thead>
       </table>

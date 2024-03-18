@@ -20,7 +20,8 @@ function Home() {
           margin: '0 auto',
         }}
       >
-        <h1 style={{ textAlign: 'center' }}>Hello {user.name}! </h1>
+        <h1 style={{ textAlign: 'center', fontFamily: 'cursive', fontSize: '75px' }}>Hello {user.name}! </h1>
+        <br />
         <Calendar />
       </div>
     </>

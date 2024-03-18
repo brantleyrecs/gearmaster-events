@@ -7,9 +7,11 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { getEvents } from '../utils/data/eventData';
+// import EventForm from './form/EventForm';
 
 function Calendar() {
   const [events, setEvents] = useState([]);
+  // const [dateString, setDateString] = useState();
   const router = useRouter();
 
   function combineDateTime(date, time) {
@@ -40,6 +42,17 @@ function Calendar() {
     router.push(`/events/${eventId}`);
   };
 
+  const addClick = (e) => {
+    // setDateString(e.dateStr);
+    router.push(`/events/new?date=${e.dateStr}`);
+    // console.warn(dateString);
+    // return (
+    //   <EventForm dateString={dateString} />
+    // );
+  };
+
+  // console.warn(dateString);
+
   // Define event handlers as needed
 
   return (
@@ -48,6 +61,7 @@ function Calendar() {
       initialView="dayGridMonth"
       events={events}
       eventClick={handleClick}
+      dateClick={addClick}
       // Add other props and event handlers as needed
     />
   );
