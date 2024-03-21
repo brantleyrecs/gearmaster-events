@@ -23,9 +23,11 @@ function Signin() {
         }}
       >
         <h1>Welcome To GearMaster-Events</h1>
-        <Button type="button" size="lg" className="copy-btn" onClick={signIn}>
-          Sign In
-        </Button>
+        <div>
+          <Button type="button" size="lg" className="copy-btn" onClick={signIn}>
+            Sign In
+          </Button>
+        </div>
       </div>
     </>
   );

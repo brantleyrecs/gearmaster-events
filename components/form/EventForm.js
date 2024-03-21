@@ -48,8 +48,6 @@ const EventForm = ({ eventObj }) => {
     }));
   };
 
-  console.warn(date);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (eventObj.id) {
@@ -103,14 +101,12 @@ const EventForm = ({ eventObj }) => {
                 <hr />
                 {
                     dbType.map((objType) => (
-                      <>
-                        <option
-                          key={objType.id}
-                          value={Number(objType.id)}
-                        >
-                          {objType.name}
-                        </option>
-                      </>
+                      <option
+                        key={objType.id}
+                        value={Number(objType.id)}
+                      >
+                        {objType.name}
+                      </option>
                     ))
                   }
               </select>

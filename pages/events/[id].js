@@ -70,11 +70,13 @@ export default function ViewEvents() {
       <Head>
         <title>{eventDetails?.name}</title>
       </Head>
-      <h1>{eventDetails.name}</h1>
-      <h5>{eventDetails.location}</h5>
-      <h6>{eventDetails.date ? formatDate(eventDetails.date) : ''}</h6>
-      <h6>{eventDetails.time ? convertTo12HourFormat(eventDetails.time) : ''}</h6>
-      <h6>{eventDetails.type?.name}</h6>
+      <h1 className="eventTitle">{eventDetails.name}</h1>
+      <div className="detailsCard">
+        <h5>Location: {eventDetails.location}</h5>
+        <h5>Date: {eventDetails.date ? formatDate(eventDetails.date) : ''}</h5>
+        <h5>Time: {eventDetails.time ? convertTo12HourFormat(eventDetails.time) : ''}</h5>
+        <h5>Type: {eventDetails.type?.name}</h5>
+      </div>
 
       <Buttons />
 
