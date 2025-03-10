@@ -1,4 +1,3 @@
-
 # GearMaster Events
 ___
 ## Overview
